@@ -7,13 +7,16 @@ import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
-import { ExpoItems } from './expo/expo_items.js';
+import { ExpoItem, ExpoItems } from './expo/expo_items.js';
 
 export default function App() {
   return (
     <Router>
       <div>
         <Switch>
+          <Route path={`/expo/:expoItem`}>
+            <ExpoItem />
+          </Route>
           <Route path="/expo">
             <ExpoItems />
           </Route>
