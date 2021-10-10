@@ -1,29 +1,56 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { useParams, Link } from "react-router-dom";
+
+import { ExpoItemContent } from './content/expo_item_content.js';
 
 function ExpoItem() {
   const [error, setError] = React.useState(null);
   const [isLoaded, setIsLoaded] = React.useState(false);
-  const [setExpoItem] = React.useState([]);
+  const [expoItem, setExpoItem] = React.useState([]);
 
-  let { expoItem } = useParams();
+  const { expoItemHandle } = useParams();
 
   React.useEffect(() => {
-    fetch(`http://localhost:1337/expo-item/${expoItem}`)
+    fetch(`http://localhost:1337/expo-items/${expoItemHandle}`)
       .then(res => res.json())
       .then(
         (result) => {
-          setIsLoaded(true);
           setExpoItem(result);
+          setIsLoaded(true);
         },
         (error) => {
-          setIsLoaded(true);
           setError(error);
+          setIsLoaded(true);
         }
       )
   }, [])
 
-  return <h3>{expoItem} and stuff</h3>;
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  } else if (!isLoaded) {
+    return <div>Loading...</div>;
+  } else {
+    return (
+      <>
+        <div className="exhibit-header">
+          <img src={'http://localhost:1337' + expoItem.banner.formats.medium.url} />
+          <h2>{expoItem.title}</h2>
+          <div className="date">{expoItem.happend_at}</div>
+          <div className="infos">
+            <p>{expoItem.distance}</p>
+            <p>{expoItem.elevation_gain}</p>
+            <p>{expoItem.duration}</p>
+          </div>
+        </div>
+        <div className="exhibit-iframe">
+          <iframe src={expoItem.ride_url} ></iframe>
+        </div>
+        {expoItem.content.map(component => (
+          <ExpoItemContent component={component} />
+        ))}
+      </>
+    );
+  }
 }
 
 function ExpoItems() {
@@ -36,12 +63,12 @@ function ExpoItems() {
       .then(res => res.json())
       .then(
         (result) => {
-          setIsLoaded(true);
           setItems(result);
+          setIsLoaded(true);
         },
         (error) => {
-          setIsLoaded(true);
           setError(error);
+          setIsLoaded(true);
         }
       )
   }, [])
@@ -52,24 +79,18 @@ function ExpoItems() {
     return <div>Loading...</div>;
   } else {
     return (
-      <>
+      <div className="exhibits">
         {items.map(item => (
-          <div className="container exhibit" key={item.id}>
-            <Link to={`/expo/${item.handle}`} >
-              <div className="row">
-                <div className="col-12 col-xl-6">
-                  <img src={'http://localhost:1337' + item.banner.formats.medium.url} />
-                </div>
-                <div className="col-12 col-xl-6">
-                  <h2>{item.title}</h2>
-                  <p>{item.intro}</p>
-                  <div className="date">{item.happend_at}</div>
-                </div>
-              </div>
-            </Link>
-          </div>
+          <Link to={`/expo/${item.handle}`} >
+            <div className="exhibit" key={item.id}>
+              <img src={'http://localhost:1337' + item.banner.formats.medium.url} />
+              <h2>{item.title}</h2>
+              <p>{item.intro}</p>
+              <div className="date">{item.happend_at}</div>
+            </div>
+          </Link>
         ))}
-      </>
+      </div>
     );
   }
 }
