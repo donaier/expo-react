@@ -2,6 +2,11 @@
   "name": "expo_react",
   "version": "0.1.0",
   "private": true,
+  "main": "src/css/sass/main.scss",
+  "devDependencies": {
+    "bulma": "^0.7.5",
+    "node-sass": "^4.14.1"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -16,7 +21,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "css-build": "node-sass --omit-source-map-url src/css/sass/main.scss src/css/main.css",
+    "css-watch": "npm run css-build -- --watch"
   },
   "eslintConfig": {
     "extends": [
