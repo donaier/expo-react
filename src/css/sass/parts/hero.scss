@@ -1,0 +1,12 @@
+.hero {
+  background-size: cover;
+
+  &.home-hero {
+    background-image: url('../images/hero.jpg');
+    background-attachment: fixed;
+    background-position: center 30%;
+  }
+  &.exhibit-header {
+    background-position: center;
+  }
+}
