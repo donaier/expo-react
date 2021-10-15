@@ -11,19 +11,17 @@ import { ExpoItem } from './expo/expo_item.js';
 export default function App() {
   return (
     <Router>
-      <div>
-        <Switch>
-          <Route path={`/expo/:expoItemHandle`}>
-            <ExpoItem />
-          </Route>
-          <Route path="/expo">
-            <ExpoItems />
-          </Route>
-          <Route path="/">
-            <ExpoItems />
-          </Route>
-        </Switch>
-      </div>
+      <Switch>
+        <Route path={`/expo/:expoItemHandle`}>
+          <ExpoItem />
+        </Route>
+        <Route path="/expo">
+          <ExpoItems />
+        </Route>
+        <Route path="/">
+          <ExpoItems />
+        </Route>
+      </Switch>
     </Router>
   );
 }

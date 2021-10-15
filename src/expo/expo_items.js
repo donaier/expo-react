@@ -27,18 +27,36 @@ function ExpoItems() {
     return <div>Loading...</div>;
   } else {
     return (
-      <div className="exhibits">
-        {items.map(item => (
-          <Link to={`/expo/${item.handle}`} key={item.id}>
-            <div className="exhibit" key={item.id}>
-              <img src={'http://localhost:1337' + item.banner.formats.medium.url} alt={item.banner.name}/>
-              <h2>{item.title}</h2>
-              <p>{item.intro}</p>
-              <div className="date">{item.happend_at}</div>
-            </div>
-          </Link>
-        ))}
-      </div>
+      <section className="exhibits">
+        <div className="container">
+          <div className="columns">
+            {items.map(item => (
+              <div className="column">
+                <Link to={`/expo/${item.handle}`} key={item.id}>
+                  <div className="card exhibit" key={item.id}>
+                    <div className="card-image">
+                      <figure className="image is-3by1 is-covering">
+                        <img src={'http://localhost:1337' + item.banner.formats.medium.url} alt={item.banner.name}/>
+                      </figure>
+                    </div>
+                    <div className="card-content">
+                      <div className="media" >
+                        <div className="media-content">
+                          <h2 className="title is-4">{item.title}</h2>
+                          <time className="subtitle is-6" datetime={item.happend_at}>{item.happend_at}</time>
+                        </div>
+                      </div>
+                      <div className="content">
+                        <p>{item.intro}</p>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     );
   }
 }
