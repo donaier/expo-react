@@ -7,6 +7,7 @@ import {
 
 import { ExpoItems } from './expo/expo_items.js';
 import { ExpoItem } from './expo/expo_item.js';
+import { HomeHero } from './general/home_hero.js';
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
           <ExpoItems />
         </Route>
         <Route path="/">
+          <HomeHero />
           <ExpoItems />
         </Route>
       </Switch>

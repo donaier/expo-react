@@ -31,9 +31,9 @@ function ExpoItems() {
         <div className="container">
           <div className="columns">
             {items.map(item => (
-              <div className="column">
-                <Link to={`/expo/${item.handle}`} key={item.id}>
-                  <div className="card exhibit" key={item.id}>
+              <div className="column" key={item.id}>
+                <Link to={`/expo/${item.handle}`}>
+                  <div className="card exhibit">
                     <div className="card-image">
                       <figure className="image is-3by1 is-covering">
                         <img src={'http://localhost:1337' + item.banner.formats.medium.url} alt={item.banner.name}/>
@@ -43,7 +43,7 @@ function ExpoItems() {
                       <div className="media" >
                         <div className="media-content">
                           <h2 className="title is-4">{item.title}</h2>
-                          <time className="subtitle is-6" datetime={item.happend_at}>{item.happend_at}</time>
+                          <time className="subtitle is-6" dateTime={item.happend_at}>{item.happend_at}</time>
                         </div>
                       </div>
                       <div className="content">

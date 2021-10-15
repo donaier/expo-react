@@ -8,7 +8,7 @@ function ExpoItemContent(props) {
       return (
         <div className={component.__component} >
           {component.images.map(image => 
-            <img src={'http://localhost:1337' + image.formats.medium.url} alt={image.name}/>
+            <img src={'http://localhost:1337' + image.formats.medium.url} alt={image.name} key={image.id} />
           )}
         </div>
       );

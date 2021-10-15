@@ -32,22 +32,29 @@ function ExpoItem() {
   } else {
     return (
       <>
-        <div className="exhibit-header">
-          <img src={'http://localhost:1337' + expoItem.banner.formats.medium.url} alt={expoItem.banner.name}/>
-          <h2>{expoItem.title}</h2>
-          <div className="date">{expoItem.happend_at}</div>
-          <div className="infos">
-            <p>{expoItem.distance}</p>
-            <p>{expoItem.elevation_gain}</p>
-            <p>{expoItem.duration}</p>
+        <div className="hero is-halfheight exhibit-header" style={{backgroundImage: `url(http://localhost:1337${expoItem.banner.formats.medium.url})`}}>
+          <div className="container">
+            <div className="hero-body">
+              <h1 className="title has-text-success is-1">{expoItem.title}</h1>
+              {/* <div className="infos">
+                <time datetime={expoItem.happend_at}>{expoItem.happend_at}</time>
+                <p>{expoItem.distance}</p>
+                <p>{expoItem.elevation_gain}</p>
+                <p>{expoItem.duration}</p>
+              </div> */}
+            </div>
           </div>
         </div>
-        <div className="exhibit-iframe">
-          <iframe src={expoItem.ride_url} title="ridewgps"></iframe>
-        </div>
-        {expoItem.content.map(component => (
-          <ExpoItemContent component={component} />
-        ))}
+        <section>
+          <div className="container">
+            {/* <div className="exhibit-iframe">
+              <iframe src={expoItem.ride_url} title="ridewgps"></iframe>
+            </div> */}
+            {expoItem.content.map(component => (
+              <ExpoItemContent component={component} key={component.__component + component.id} />
+            ))}
+          </div>
+        </section>
       </>
     );
   }
