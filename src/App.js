@@ -2,12 +2,11 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams
+  Route
 } from "react-router-dom";
-import { ExpoItem, ExpoItems } from './expo/expo_items.js';
+
+import { ExpoItems } from './expo/expo_items.js';
+import { ExpoItem } from './expo/expo_item.js';
 
 export default function App() {
   return (

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 function ExpoItemContent(props) {
   const component = props.component
@@ -8,7 +8,7 @@ function ExpoItemContent(props) {
       return (
         <div className={component.__component} >
           {component.images.map(image => 
-            <img src={'http://localhost:1337' + image.formats.medium.url} />
+            <img src={'http://localhost:1337' + image.formats.medium.url} alt={image.name}/>
           )}
         </div>
       );
