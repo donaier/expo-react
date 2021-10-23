@@ -6,7 +6,8 @@ $yellow: #E5B852;
 
 $dark-blue: darken($blue, 20%);
 
-$beige-light: #e8c692;
+$light: #e8c692;
+$lighter: #f5e5ce;
 $dark: #301206;
 
 $family-primary: 'Neuton', serif;
@@ -22,6 +23,11 @@ $body-background-color: $dark;
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
+$card-background-color: transparent;
+
+$title-color: $red;
+$text: $light;
+$body-font-size: 20px;
 
 $navbar-item-hover-background-color: transparent;
 

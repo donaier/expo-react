@@ -7,10 +7,6 @@ figure.image.is-covering img {
   object-fit: cover;  
 }
 
-.exhibits {
-  padding-bottom: 1200px;
-}
-
 #root {
   &:before {
     content: '';
@@ -21,4 +17,17 @@ figure.image.is-covering img {
     height: 60px;
     background-image: linear-gradient(to bottom, $red 0 20px, $yellow 20px 40px, $blue 40px);
   }
+
+  @media screen and (max-width: 1024px) {
+    &:before {
+      height: 45px;
+      background-image: linear-gradient(to bottom, $red 0 15px, $yellow 15px 30px, $blue 30px);
+    }
+  }
+}
+
+
+// temp
+.exhibits {
+  padding-bottom: 1200px;
 }

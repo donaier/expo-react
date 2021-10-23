@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import ReactMarkdown from 'react-markdown'
+import Moment from 'moment';
 
 function ExpoItems() {
   const [error, setError] = React.useState(null);
   const [isLoaded, setIsLoaded] = React.useState(false);
   const [items, setItems] = React.useState([]);
+
+  Moment.locale('ch_DE');
 
   React.useEffect(() => {
     fetch("http://localhost:1337/expo-items")
@@ -29,32 +33,30 @@ function ExpoItems() {
     return (
       <section className="exhibits">
         <div className="container">
-          <div className="columns">
-            {items.map(item => (
-              <div className="column" key={item.id}>
-                <Link to={`/expo/${item.handle}`}>
-                  <div className="card exhibit">
-                    <div className="card-image">
-                      <figure className="image is-3by1 is-covering">
-                        <img src={'http://localhost:1337' + item.banner.formats.medium.url} alt={item.banner.name}/>
-                      </figure>
+          {items.map(item => (
+            <div className="expo-item" key={item.id}>
+              <Link to={`/expo/${item.handle}`}>
+                <div className="card exhibit">
+                  <div className="card-image">
+                    <figure className="image is-3by1 is-covering">
+                      <img src={'http://localhost:1337' + item.banner.formats.medium.url} alt={item.banner.name}/>
+                    </figure>
+                  </div>
+                  <div className="card-content">
+                    <div className="media" >
+                      <div className="media-content">
+                        <h2 className="title is-3">{item.title}</h2>
+                        <time className="is-block subtitle is-6" dateTime={item.happend_at}>{Moment(item.happend_at).format('D. MMM \'YY')}</time>
+                      </div>
                     </div>
-                    <div className="card-content">
-                      <div className="media" >
-                        <div className="media-content">
-                          <h2 className="title is-4">{item.title}</h2>
-                          <time className="subtitle is-6" dateTime={item.happend_at}>{item.happend_at}</time>
-                        </div>
-                      </div>
-                      <div className="content">
-                        <p>{item.intro}</p>
-                      </div>
+                    <div className="content">
+                      <ReactMarkdown>{item.intro}</ReactMarkdown>
                     </div>
                   </div>
-                </Link>
-              </div>
-            ))}
-          </div>
+                </div>
+              </Link>
+            </div>
+          ))}
         </div>
       </section>
     );

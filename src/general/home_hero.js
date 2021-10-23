@@ -6,16 +6,10 @@ function HomeHero() {
       <section className="hero is-large home-hero">
         <nav className="navbar is-fixed-top">
           <div className="container">
-            <div id="navMenu" className="navbar-menu">
-              <div className="navbar-start">
-                <a className="navbar-item" href="/">
-                  <h1 className="title is-1 has-text-primary">exposition</h1>
-                </a>
-              </div>
-              <div className="navbar-end">
-                <div className="navbar-item">
-                </div>
-              </div>
+            <div className="navbar-brand">
+              <a className="navbar-item" href="/">
+                <h1 className="title is-1 has-text-primary">exposition</h1>
+              </a>
             </div>
           </div>
         </nav>
