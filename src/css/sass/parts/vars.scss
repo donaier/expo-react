@@ -6,7 +6,8 @@ $yellow: #E5B852;
 
 $dark-blue: darken($blue, 20%);
 
-$beige-light: #D0D1CD;
+$beige-light: #e8c692;
+$dark: #301206;
 
 $family-primary: 'Neuton', serif;
 $family-headings: 'Lobster', serif;
@@ -17,7 +18,7 @@ $info: $blue;
 $success: $orange;
 $warning: $yellow;
 
-$body-background-color: transparent;
+$body-background-color: $dark;
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;

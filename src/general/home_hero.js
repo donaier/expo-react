@@ -29,6 +29,7 @@ function HomeHero() {
           </p>
         </div>
       </section>
+      <div className="level fancy-spacer"></div>
     </>
   );
 }

@@ -2,20 +2,9 @@
   background-size: cover;
   position: relative;
   z-index: 10;
-  margin-bottom: 60px;
-
-  &:after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 12px;
-    border-top: 4px solid $red;
-    background: $yellow;
-    border-bottom: 4px solid $blue;
-  }
 
   &.home-hero {
-    background-image: url('../images/hero_2.jpg');
+    background-image: url('../images/hero.jpg');
     background-attachment: fixed;
     background-position: center 120%;
   }
@@ -30,7 +19,33 @@
     filter: brightness(.8) opacity(.75);
   }
 
-  // nav.navbar {
-  //   background: linear-gradient(to bottom, $dark-blue, transparent 80%);
-  // }
+  #navMenu {
+    h1 {
+      position: relative;
+      top: 5px;
+    }
+  }
+}
+
+.level.fancy-spacer {
+  position: relative;
+  background-image: url("../images/spacer_1.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 120px;
+  margin: 100px 0;
+
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -100px;
+    width: 100%;
+    height: 12px;
+    border-top: 4px solid $red;
+    background: $yellow;
+    border-bottom: 4px solid $blue;
+  }
 }
