@@ -4,7 +4,7 @@ function HomeHero() {
   return (
     <>
       <section className="hero is-large home-hero">
-        <nav className="navbar">
+        <nav className="navbar is-fixed-top">
           <div className="container">
             <div id="navMenu" className="navbar-menu">
               <div className="navbar-start">

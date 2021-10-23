@@ -1,12 +1,35 @@
 .hero {
   background-size: cover;
+  position: relative;
+  margin-bottom: 60px;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 12px;
+    border-top: 4px solid $red;
+    background: $yellow;
+    border-bottom: 4px solid $blue;
+  }
 
   &.home-hero {
-    background-image: url('../images/hero.jpg');
+    background-image: url('../images/hero_2.jpg');
     background-attachment: fixed;
-    background-position: center 30%;
+    background-position: center 120%;
   }
   &.exhibit-header {
     background-position: center;
+  }
+  p.title {
+    position: absolute;
+    font-size: 6rem;
+    bottom: 4%;
+    right: 5%;
+    filter: brightness(.8) opacity(.75);
+  }
+
+  nav.navbar {
+    background: linear-gradient(to bottom, $dark-blue, transparent 80%);
   }
 }

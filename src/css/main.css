@@ -6965,12 +6965,32 @@ nav.navbar {
 figure.image.is-covering img {
   object-fit: cover; }
 
-.hero.home-hero {
-  background-image: url("../images/hero.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center 30%; }
+.exhibits {
+  margin-bottom: 1200px; }
 
-.hero.exhibit-header {
+.hero {
   background-size: cover;
-  background-position: center; }
+  position: relative;
+  margin-bottom: 60px; }
+  .hero:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 12px;
+    border-top: 4px solid #DF3926;
+    background: #E5B852;
+    border-bottom: 4px solid #46A8CD; }
+  .hero.home-hero {
+    background-image: url("../images/hero_2.jpg");
+    background-attachment: fixed;
+    background-position: center 120%; }
+  .hero.exhibit-header {
+    background-position: center; }
+  .hero p.title {
+    position: absolute;
+    font-size: 6rem;
+    bottom: 4%;
+    right: 5%;
+    filter: brightness(0.8) opacity(0.75); }
+  .hero nav.navbar {
+    background: linear-gradient(to bottom, #256d88, transparent 80%); }
