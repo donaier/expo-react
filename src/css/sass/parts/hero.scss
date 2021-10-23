@@ -1,6 +1,7 @@
 .hero {
   background-size: cover;
   position: relative;
+  z-index: 10;
   margin-bottom: 60px;
 
   &:after {
@@ -29,7 +30,7 @@
     filter: brightness(.8) opacity(.75);
   }
 
-  nav.navbar {
-    background: linear-gradient(to bottom, $dark-blue, transparent 80%);
-  }
+  // nav.navbar {
+  //   background: linear-gradient(to bottom, $dark-blue, transparent 80%);
+  // }
 }

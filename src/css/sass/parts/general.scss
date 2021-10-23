@@ -8,5 +8,17 @@ figure.image.is-covering img {
 }
 
 .exhibits {
-  margin-bottom: 1200px;
+  padding-bottom: 1200px;
+}
+
+#root {
+  &:before {
+    content: '';
+    display: block;
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    height: 60px;
+    background-image: linear-gradient(to bottom, $red 0 20px, $yellow 20px 40px, $blue 40px);
+  }
 }
