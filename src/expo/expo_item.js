@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from "react-router-dom";
+import Moment from 'moment';
 
 import { ExpoItemContent } from './content/expo_item_content.js';
 
@@ -32,21 +33,54 @@ function ExpoItem() {
   } else {
     return (
       <>
-        <div className="hero is-halfheight exhibit-header" style={{backgroundImage: `url(http://localhost:1337${expoItem.banner.formats.medium.url})`}}>
-          <div className="container">
-            <div className="hero-body">
-              <h1 className="title has-text-success is-1">{expoItem.title}</h1>
-              {/* <div className="infos">
-                <time datetime={expoItem.happend_at}>{expoItem.happend_at}</time>
-                <p>{expoItem.distance}</p>
-                <p>{expoItem.elevation_gain}</p>
-                <p>{expoItem.duration}</p>
-              </div> */}
+        <div className="hero is-large exhibit-header" style={{backgroundImage: `url(http://localhost:1337${expoItem.banner.formats.medium.url})`}}>
+          <nav className="navbar is-fixed-top">
+            <div className="container">
+              <div className="navbar-brand">
+                <div className="navbar-item">
+                  <h1 className="title is-1 has-text-primary">{expoItem.title}</h1>
+                </div>
+              </div>
             </div>
-          </div>
+          </nav>
+          <div className="hero-body"></div>
         </div>
-        <section>
+        <section className="exhibit-detail content">
           <div className="container">
+            <div className="level infos">
+              <div className="level-item">
+                <span className="icon-text">
+                  <span className="icon">
+                    <i className="fas fa-calendar-alt"></i>
+                  </span>
+                  <span><time datetime={expoItem.happend_at}>{Moment(expoItem.happend_at).format('D. MMM \'YY')}</time></span>
+                </span>
+              </div>
+              <div className="level-item">
+                <span className="icon-text">
+                  <span className="icon">
+                    <i className="fas fa-route"></i>
+                  </span>
+                  <span>{expoItem.distance} km</span>
+                </span>
+              </div>
+              <div className="level-item">
+                <span className="icon-text">
+                  <span className="icon">
+                    <i className="fas fa-mountain"></i>
+                  </span>
+                  <span>{expoItem.elevation_gain} m</span>
+                </span>
+              </div>
+              <div className="level-item">
+                <span className="icon-text">
+                  <span className="icon">
+                    <i className="fas fa-stopwatch"></i>
+                  </span>
+                  <span>{expoItem.duration}</span>
+                </span>
+              </div>
+            </div>
             {/* <div className="exhibit-iframe">
               <iframe src={expoItem.ride_url} title="ridewgps"></iframe>
             </div> */}

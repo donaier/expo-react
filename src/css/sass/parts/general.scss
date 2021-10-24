@@ -15,13 +15,13 @@ figure.image.is-covering img {
     z-index: 5;
     width: 100%;
     height: 60px;
-    background-image: linear-gradient(to bottom, $red 0 20px, $yellow 20px 40px, $blue 40px);
+    background-image: linear-gradient(to bottom, $dark-red 0 20px, $dark-yellow 20px 40px, $dark-blue 40px);
   }
 
   @media screen and (max-width: 1024px) {
     &:before {
       height: 45px;
-      background-image: linear-gradient(to bottom, $red 0 15px, $yellow 15px 30px, $blue 30px);
+      background-image: linear-gradient(to bottom, $dark-red 0 15px, $dark-yellow 15px 30px, $dark-blue 30px);
     }
   }
 }

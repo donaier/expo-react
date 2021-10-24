@@ -1,10 +1,13 @@
 $red: #DF3926;
+$dark-red: darken($red, 15%);
 $orange: #EF6625;
+$dark-orange: darken($orange, 15%);
 $blue: #46A8CD;
+$dark-blue: darken($blue, 15%);
 $purple: #512863;
+$dark-purple: darken($purple, 15%);
 $yellow: #E5B852;
-
-$dark-blue: darken($blue, 20%);
+$dark-yellow: darken($yellow, 15%);
 
 $light: #e8c692;
 $lighter: #f5e5ce;
@@ -24,6 +27,9 @@ $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
 $card-background-color: transparent;
+$box-background-color: $dark-purple;
+$box-radius: 0;
+$box-shadow: none;
 
 $title-color: $red;
 $text: $light;
