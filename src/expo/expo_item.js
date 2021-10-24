@@ -33,7 +33,7 @@ function ExpoItem() {
   } else {
     return (
       <>
-        <div className="hero is-large exhibit-header" style={{backgroundImage: `url(http://18.192.181.108:1337${expoItem.banner.formats.medium.url})`}}>
+        <div className="hero is-large exhibit-header" style={{backgroundImage: `url(${expoItem.banner.formats.medium.url})`}}>
           <nav className="navbar is-fixed-top">
             <div className="container">
               <div className="navbar-brand">

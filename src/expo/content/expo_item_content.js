@@ -10,7 +10,7 @@ function ExpoItemContent(props) {
         <div className={component.__component.split(".").pop()} >
           <figure>
             {component.images.map(image =>
-              <img src={'http://18.192.181.108:1337' + image.formats.large.url} alt={image.name} key={image.id} />
+              <img src={image.formats.large.url} alt={image.name} key={image.id} />
             )}
             {/* <figcaption>
               Figure 1: Some beautiful placeholders

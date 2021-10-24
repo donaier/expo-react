@@ -39,7 +39,7 @@ function ExpoItems() {
                 <div className="card exhibit">
                   <div className="card-image">
                     <figure className="image is-3by1 is-covering">
-                      <img src={'http://18.192.181.108:1337' + item.banner.formats.medium.url} alt={item.banner.name}/>
+                      <img src={item.banner.formats.medium.url} alt={item.banner.name}/>
                     </figure>
                   </div>
                   <div className="card-content">
