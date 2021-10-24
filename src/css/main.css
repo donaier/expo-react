@@ -7010,10 +7010,10 @@ figure.image.is-covering img {
     .hero p.title {
       font-size: 2rem;
       bottom: 35%; }
-    .hero nav h1.title.is-1 {
+    .hero:not(.home-hero) nav h1.title.is-1 {
       position: relative;
       top: 2px;
-      font-size: 2rem; } }
+      font-size: 1.2rem; } }
 
 .level.fancy-spacer {
   position: relative;
@@ -7079,19 +7079,9 @@ figure.image.is-covering img {
 .exhibit-detail {
   position: relative;
   margin-top: 30px; }
-  .exhibit-detail:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: -30px;
-    width: 100%;
-    height: 12px;
-    border-top: 4px solid #DF3926;
-    background: #E5B852;
-    border-bottom: 4px solid #46A8CD; }
   .exhibit-detail .level.infos {
     position: absolute;
-    top: -110px;
+    top: -180px;
     width: 100%;
     z-index: 22;
     margin: 30px 0 20px; }
@@ -7105,11 +7095,11 @@ figure.image.is-covering img {
       margin-right: 0; }
   .exhibit-detail .content-text {
     font-size: 1.2rem;
-    letter-spacing: 1px; }
+    letter-spacing: 1px;
+    border: 2px solid #5e160e; }
   @media screen and (max-width: 1024px) {
     .exhibit-detail .level.infos {
-      position: relative;
-      top: 0;
+      top: -45px;
       z-index: 3;
       font-size: 1rem; }
       .exhibit-detail .level.infos .level-item {
@@ -7120,4 +7110,6 @@ figure.image.is-covering img {
       margin-bottom: 1rem; }
     .exhibit-detail .content-text {
       font-size: 1rem;
-      letter-spacing: 1px; } }
+      letter-spacing: 1px;
+      border-left: none;
+      border-right: none; } }

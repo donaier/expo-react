@@ -2,21 +2,21 @@
   position: relative;
   margin-top: 30px;
 
-  &:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: -30px;
-    width: 100%;
-    height: 12px;
-    border-top: 4px solid $red;
-    background: $yellow;
-    border-bottom: 4px solid $blue;
-  }
+  // &:before {
+  //   content: '';
+  //   display: block;
+  //   position: absolute;
+  //   top: -30px;
+  //   width: 100%;
+  //   height: 12px;
+  //   border-top: 4px solid $red;
+  //   background: $yellow;
+  //   border-bottom: 4px solid $blue;
+  // }
 
   .level.infos {
     position: absolute;
-    top: -110px;
+    top: -180px;
     width: 100%;
     z-index: 22;
     margin: 30px 0 20px;
@@ -35,12 +35,12 @@
   .content-text {
     font-size: 1.2rem;
     letter-spacing: 1px;
+    border: 2px solid $darker-red;
   }
 
   @media screen and (max-width: 1024px) {
     .level.infos {
-      position: relative;
-      top: 0;
+      top: -45px;
       z-index: 3;
       font-size: 1rem;
       .level-item {
@@ -55,6 +55,8 @@
     .content-text {
       font-size: 1rem;
       letter-spacing: 1px;
+      border-left: none;
+      border-right: none;
     }  
   }
 }

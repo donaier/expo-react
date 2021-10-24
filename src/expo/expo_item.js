@@ -45,7 +45,7 @@ function ExpoItem() {
           </nav>
           <div className="hero-body"></div>
         </div>
-        <section className="exhibit-detail content">
+        <section className="exhibit-detail">
           <div className="container">
             <div className="level infos">
               <div className="level-item">
@@ -53,7 +53,7 @@ function ExpoItem() {
                   <span className="icon">
                     <i className="fas fa-calendar-alt"></i>
                   </span>
-                  <span><time datetime={expoItem.happend_at}>{Moment(expoItem.happend_at).format('D. MMM \'YY')}</time></span>
+                  <span><time dateTime={expoItem.happend_at}>{Moment(expoItem.happend_at).format('D. MMM \'YY')}</time></span>
                 </span>
               </div>
               <div className="level-item">
@@ -81,9 +81,11 @@ function ExpoItem() {
                 </span>
               </div>
             </div>
-            {/* <div className="exhibit-iframe">
-              <iframe src={expoItem.ride_url} title="ridewgps"></iframe>
-            </div> */}
+          </div>
+          <div className="level fancy-spacer"></div>
+        </section>
+        <section className="exhibit-detail content">
+          <div className="container">
             {expoItem.content.map(component => (
               <ExpoItemContent component={component} key={component.__component + component.id} />
             ))}
