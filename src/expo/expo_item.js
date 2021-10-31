@@ -12,7 +12,7 @@ function ExpoItem() {
   const { expoItemHandle } = useParams();
 
   React.useEffect(() => {
-    fetch(`http://18.192.181.108:1337/expo-items/${expoItemHandle}`)
+    fetch(`https://strapi.donaier.ch/expo-items/${expoItemHandle}`)
       .then(res => res.json())
       .then(
         (result) => {

@@ -11,7 +11,7 @@ function ExpoItems() {
   Moment.locale('ch_DE');
 
   React.useEffect(() => {
-    fetch("http://18.192.181.108:1337/expo-items")
+    fetch("https://strapi.donaier.ch/expo-items")
       .then(res => res.json())
       .then(
         (result) => {
