@@ -18,7 +18,7 @@ function HomeHero() {
             <span className="has-text-info">#</span>
             <span className="has-text-primary">Living</span>
             <span className="has-text-success">Men</span>
-            <span className="has-text-warning">Ride</span>
+            <span className="has-text-flashy">Ride</span>
             <span className="has-text-info">Free</span>
           </p>
         </div>

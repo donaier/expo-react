@@ -1,14 +1,14 @@
 .exhibits {
+  .expo-item {
+    background: $beige;
+    margin-bottom: 1rem;
+  }
+
   .card.exhibit {
     position: relative;
     margin-bottom: 3rem;
     filter: brightness(.7);
     transition: filter .2s ease;
-
-    img {
-      border: 2px solid $orange;
-      border-radius: 5px;
-    }
 
     .card-content {
       position: absolute;
@@ -34,8 +34,12 @@
   }
 
   @media screen and (max-width: 1024px) {
+    .expo-item {
+      padding: .5rem 0;
+    }
+
     .card.exhibit {
-      margin: 1rem;
+      margin: 0 1rem;
 
       .card-content {
         padding: 1rem;

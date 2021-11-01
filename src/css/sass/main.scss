@@ -2,6 +2,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Neuton:ital,wght@0,400;0,700;0,800;1,400&display=swap');
 
+@import 'mixins';
+
 @import 'parts/vars';
 
 // Import only what you need from Bulma
@@ -21,6 +23,7 @@
 // slap the afterstuff on
 @import 'parts/general';
 @import 'parts/hero';
+@import 'parts/footer';
 
 @import 'parts/expo_items';
 @import 'parts/expo_item';

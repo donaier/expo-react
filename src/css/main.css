@@ -6979,9 +6979,6 @@ figure.image.is-covering img {
     height: 45px;
     background-image: linear-gradient(to bottom, #a12618 0 15px, #cc971f 15px 30px, #2a7d9c 30px); } }
 
-.exhibits {
-  padding-bottom: 1200px; }
-
 .hero {
   background-size: cover;
   position: relative;
@@ -6996,17 +6993,81 @@ figure.image.is-covering img {
     position: absolute;
     font-size: 6rem;
     bottom: 4%;
-    right: 5%;
+    right: 5%; }
+    .hero p.title span {
+      filter: brightness(0.8) opacity(0.75);
+      text-shadow: 3px 3px 2px #301206; }
+    .hero p.title .has-text-flashy {
+      color: #E5B852;
+      -webkit-animation: color-change 3s infinite;
+      -moz-animation: color-change 3s infinite;
+      -ms-animation: color-change 3s infinite;
+      -o-animation: color-change 3s infinite;
+      animation: color-change 3s infinite; }
+
+@keyframes color-change {
+  0% {
+    color: #E5B852;
     filter: brightness(0.8) opacity(0.75); }
+  50% {
+    color: #cc971f;
+    filter: brightness(1) opacity(1); }
+  100% {
+    color: #E5B852;
+    filter: brightness(0.8) opacity(0.75); } }
+
+@-webkit-keyframes color-change {
+  0% {
+    color: #E5B852;
+    filter: brightness(0.8) opacity(0.75); }
+  50% {
+    color: #cc971f;
+    filter: brightness(1) opacity(1); }
+  100% {
+    color: #E5B852;
+    filter: brightness(0.8) opacity(0.75); } }
+
+@-moz-keyframes color-change {
+  0% {
+    color: #E5B852;
+    filter: brightness(0.8) opacity(0.75); }
+  50% {
+    color: #cc971f;
+    filter: brightness(1) opacity(1); }
+  100% {
+    color: #E5B852;
+    filter: brightness(0.8) opacity(0.75); } }
+
+@-ms-keyframes color-change {
+  .hero p.title .has-text-flashy 0% {
+    color: #E5B852;
+    filter: brightness(0.8) opacity(0.75); }
+  .hero p.title .has-text-flashy 50% {
+    color: #cc971f;
+    filter: brightness(1) opacity(1); }
+  .hero p.title .has-text-flashy 100% {
+    color: #E5B852;
+    filter: brightness(0.8) opacity(0.75); } }
+
+@-o-keyframes color-change {
+  0% {
+    color: #E5B852;
+    filter: brightness(0.8) opacity(0.75); }
+  50% {
+    color: #cc971f;
+    filter: brightness(1) opacity(1); }
+  100% {
+    color: #E5B852;
+    filter: brightness(0.8) opacity(0.75); } }
   .hero nav h1 {
     position: relative;
     top: 5px; }
   @media screen and (max-width: 1024px) {
     .hero.home-hero {
       height: 500px;
-      min-height: 65vh; }
+      min-height: 75vh; }
     .hero.home-hero {
-      background-position: center; }
+      background-position: top; }
     .hero p.title {
       font-size: 2rem;
       bottom: 35%; }
@@ -7033,6 +7094,15 @@ figure.image.is-covering img {
     border-top: 4px solid #DF3926;
     background: #E5B852;
     border-bottom: 4px solid #46A8CD; }
+  .level.fancy-spacer.is-footer {
+    background-image: url("../images/spacer_3.svg");
+    filter: opacity(0.5); }
+    @media screen and (max-width: 1024px) {
+      .level.fancy-spacer.is-footer {
+        height: 40px;
+        margin: 80px 0 30px; }
+        .level.fancy-spacer.is-footer:before {
+          top: -30px; } }
   @media screen and (max-width: 1024px) {
     .level.fancy-spacer {
       height: 80px;
@@ -7040,14 +7110,15 @@ figure.image.is-covering img {
       .level.fancy-spacer:before {
         top: -60px; } }
 
+.exhibits .expo-item {
+  background: #501e0a;
+  margin-bottom: 1rem; }
+
 .exhibits .card.exhibit {
   position: relative;
   margin-bottom: 3rem;
   filter: brightness(0.7);
   transition: filter .2s ease; }
-  .exhibits .card.exhibit img {
-    border: 2px solid #EF6625;
-    border-radius: 5px; }
   .exhibits .card.exhibit .card-content {
     position: absolute;
     bottom: 0;
@@ -7065,8 +7136,10 @@ figure.image.is-covering img {
     color: #f5e5ce; }
 
 @media screen and (max-width: 1024px) {
+  .exhibits .expo-item {
+    padding: .5rem 0; }
   .exhibits .card.exhibit {
-    margin: 1rem; }
+    margin: 0 1rem; }
     .exhibits .card.exhibit .card-content {
       padding: 1rem; }
       .exhibits .card.exhibit .card-content .title.is-3 {
