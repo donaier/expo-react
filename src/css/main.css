@@ -7096,7 +7096,11 @@ figure.image.is-covering img {
     border-bottom: 4px solid #46A8CD; }
   .level.fancy-spacer.is-footer {
     background-image: url("../images/spacer_3.svg");
-    filter: opacity(0.5); }
+    filter: opacity(0.5);
+    height: 80px;
+    margin: 100px 0 40px; }
+    .level.fancy-spacer.is-footer:before {
+      top: -50px; }
     @media screen and (max-width: 1024px) {
       .level.fancy-spacer.is-footer {
         height: 40px;
