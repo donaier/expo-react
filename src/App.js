@@ -14,7 +14,7 @@ export default function App() {
   return (
     <Router>
       <Switch>
-        <Route path={`/expo/:expoItemHandle`}>
+        <Route path={`/expo/:expoItemSlug`}>
           <ExpoItem />
         </Route>
         <Route path="/expo">

@@ -9,14 +9,21 @@ function ExpoItem() {
   const [isLoaded, setIsLoaded] = React.useState(false);
   const [expoItem, setExpoItem] = React.useState([]);
 
-  const { expoItemHandle } = useParams();
+  const { expoItemSlug } = useParams();
 
   React.useEffect(() => {
-    fetch(`https://strapi.donaier.ch/expo-items/${expoItemHandle}`)
+    fetch('https://cockpit.donaier.ch/api/collections/get/trip?token=account-6c57e73dbedad1d552b8a424bd4e72', {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+          filter: {slug:expoItemSlug}
+        })
+      })
       .then(res => res.json())
       .then(
         (result) => {
-          setExpoItem(result);
+          console.log(result);
+          setExpoItem(result.entries[0]);
           setIsLoaded(true);
         },
         (error) => {
@@ -24,7 +31,7 @@ function ExpoItem() {
           setIsLoaded(true);
         }
       )
-  }, [expoItemHandle])
+  }, [expoItemSlug])
 
   if (error) {
     return <div>Error: {error.message}</div>;
@@ -33,7 +40,7 @@ function ExpoItem() {
   } else {
     return (
       <>
-        <div className="hero is-large exhibit-header" style={{backgroundImage: `url(${expoItem.banner.formats.medium.url})`}}>
+        <div className="hero is-large exhibit-header" style={{backgroundImage: `url(https://cockpit.donaier.ch/${expoItem.hero.path})`}}>
           <nav className="navbar is-fixed-top">
             <div className="container">
               <div className="navbar-brand">
@@ -53,7 +60,7 @@ function ExpoItem() {
                   <span className="icon">
                     <i className="fas fa-calendar-alt"></i>
                   </span>
-                  <span><time dateTime={expoItem.happend_at}>{Moment(expoItem.happend_at).format('D. MMM \'YY')}</time></span>
+                  <span><time dateTime={expoItem.date}>{Moment(expoItem.date).format('D. MMM \'YY')}</time></span>
                 </span>
               </div>
               <div className="level-item">
@@ -61,7 +68,7 @@ function ExpoItem() {
                   <span className="icon">
                     <i className="fas fa-route"></i>
                   </span>
-                  <span>{expoItem.distance} km</span>
+                  <span>{expoItem.distance}</span>
                 </span>
               </div>
               <div className="level-item">
@@ -69,7 +76,7 @@ function ExpoItem() {
                   <span className="icon">
                     <i className="fas fa-mountain"></i>
                   </span>
-                  <span>{expoItem.elevation_gain} m</span>
+                  <span>{expoItem.elevation}</span>
                 </span>
               </div>
               <div className="level-item">
@@ -86,9 +93,9 @@ function ExpoItem() {
         </section>
         <section className="exhibit-detail content">
           <div className="container">
-            {expoItem.content.map(component => (
-              <ExpoItemContent component={component} key={component.__component + component.id} />
-            ))}
+            {/* {expoItem.content.map(component => (
+              <ExpoItemContent component={component} key={component.__component + component._id} />
+            ))} */}
           </div>
         </section>
       </>

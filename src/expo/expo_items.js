@@ -11,11 +11,11 @@ function ExpoItems() {
   Moment.locale('ch_DE');
 
   React.useEffect(() => {
-    fetch("https://strapi.donaier.ch/expo-items")
+    fetch("https://cockpit.donaier.ch/api/collections/get/trip?token=account-6c57e73dbedad1d552b8a424bd4e72")
       .then(res => res.json())
       .then(
         (result) => {
-          setItems(result);
+          setItems(result.entries);
           setIsLoaded(true);
         },
         (error) => {
@@ -34,24 +34,22 @@ function ExpoItems() {
       <section className="exhibits">
         <div className="container">
           {items.map(item => (
-            <div className="expo-item" key={item.id}>
-              <Link to={`/expo/${item.handle}`}>
+            <div className="expo-item" key={item._id}>
+              <Link to={`/expo/${item.slug}`}>
                 <div className="card exhibit">
                   <div className="card-image">
                     <figure className="image is-3by1 is-covering">
-                      <img src={item.banner.formats.medium.url} alt={item.banner.name}/>
+                      <img src={'https://cockpit.donaier.ch'+item.hero.path} alt={item.title}/>
                     </figure>
                   </div>
                   <div className="card-content">
                     <div className="media" >
                       <div className="media-content">
                         <h2 className="title is-3">{item.title}</h2>
-                        <time className="is-block subtitle is-6" dateTime={item.happend_at}>{Moment(item.happend_at).format('D. MMM \'YY')}</time>
+                        <time className="is-block subtitle is-6" dateTime={item.date}>{Moment(item.date).format('D. MMM \'YY')}</time>
                       </div>
                     </div>
-                    <div className="content">
-                      <ReactMarkdown>{item.intro}</ReactMarkdown>
-                    </div>
+                    <div className="content" dangerouslySetInnerHTML={{__html: item.subtitle}} />
                   </div>
                 </div>
               </Link>
