@@ -7174,6 +7174,13 @@ figure.image.is-covering img {
     font-size: 1.2rem;
     letter-spacing: 1px;
     border: 2px solid #5e160e; }
+  .exhibit-detail .content-gallery {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between; }
+    .exhibit-detail .content-gallery img {
+      display: inline;
+      max-width: 49%; }
   @media screen and (max-width: 1024px) {
     .exhibit-detail .level.infos {
       top: -45px;

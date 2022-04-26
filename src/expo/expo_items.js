@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import ReactMarkdown from 'react-markdown';
 import Moment from 'moment';
 
 function ExpoItems() {

@@ -37,6 +37,15 @@
     letter-spacing: 1px;
     border: 2px solid $darker-red;
   }
+  .content-gallery {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    img {
+      display: inline;
+      max-width: 49%;
+    }
+  }
 
   @media screen and (max-width: 1024px) {
     .level.infos {

@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 
 function ExpoItemContent(props) {
   const component = props.component
@@ -8,7 +7,7 @@ function ExpoItemContent(props) {
     case 'image':
       return (
         <div className={'content-image'} >
-          <img src={'https://cockpit.donaier.ch/' + component.value.path} />
+          <img src={'https://cockpit.donaier.ch/' + component.value.path} alt='' />
         </div>
       );
     case 'wysiwyg':
@@ -18,8 +17,8 @@ function ExpoItemContent(props) {
     case 'gallery':
       return (
         <div className={'content-gallery'} >
-          {component.value.map(image => (
-            <img src={'https://cockpit.donaier.ch/' + image.path} />
+          {component.value.map((image, i) => (
+            <img src={'https://cockpit.donaier.ch/' + image.path} key={i} alt='' />
           ))}
         </div>
       );
