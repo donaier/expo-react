@@ -22,7 +22,6 @@ function ExpoItem() {
       .then(res => res.json())
       .then(
         (result) => {
-          console.log(result);
           setExpoItem(result.entries[0]);
           setIsLoaded(true);
         },
@@ -93,9 +92,9 @@ function ExpoItem() {
         </section>
         <section className="exhibit-detail content">
           <div className="container">
-            {/* {expoItem.content.map(component => (
-              <ExpoItemContent component={component} key={component.__component + component._id} />
-            ))} */}
+            {expoItem.content.map((component, i) => (
+              <ExpoItemContent component={component} key={component.field.type + i} />
+            ))}
           </div>
         </section>
       </>

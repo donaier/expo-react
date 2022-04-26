@@ -4,28 +4,27 @@ import ReactMarkdown from 'react-markdown';
 function ExpoItemContent(props) {
   const component = props.component
 
-  switch (component.__component) {
-    case 'content.content-image':
+  switch (component.field.type) {
+    case 'image':
       return (
-        <div className={component.__component.split(".").pop()} >
-          <figure>
-            {component.images.map(image =>
-              <img src={image.formats.large.url} alt={image.name} key={image.id} />
-            )}
-            {/* <figcaption>
-              Figure 1: Some beautiful placeholders
-            </figcaption> */}
-          </figure>
+        <div className={'content-image'} >
+          <img src={'https://cockpit.donaier.ch/' + component.value.path} />
         </div>
       );
-    case 'content.content-text':
+    case 'wysiwyg':
       return (
-        <div className={component.__component.split(".").pop() + ' box'} >
-          <ReactMarkdown>{component.text}</ReactMarkdown>
+        <div className={'content-text box'} dangerouslySetInnerHTML={{__html: component.value}} />
+      );
+    case 'gallery':
+      return (
+        <div className={'content-gallery'} >
+          {component.value.map(image => (
+            <img src={'https://cockpit.donaier.ch/' + image.path} />
+          ))}
         </div>
       );
     default:
-      break;
+      return null;
   }
 }
 
