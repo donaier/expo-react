@@ -301,7 +301,7 @@ pre {
   font-family: monospace; }
 
 body {
-  color: #e8c692;
+  color: #f5e5ce;
   font-size: 20px;
   font-weight: 400;
   line-height: 1.5; }
@@ -354,7 +354,7 @@ fieldset {
 pre {
   -webkit-overflow-scrolling: touch;
   background-color: whitesmoke;
-  color: #e8c692;
+  color: #f5e5ce;
   font-size: 0.875em;
   overflow-x: auto;
   padding: 1.25rem 1.5rem;
@@ -1148,10 +1148,10 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   position: relative !important; }
 
 .box {
-  background-color: #24122d;
+  background-color: #501e0a;
   border-radius: 0;
   box-shadow: none;
-  color: #e8c692;
+  color: #f5e5ce;
   display: block;
   padding: 1.25rem; }
 
@@ -1202,7 +1202,7 @@ a.box:active {
   .button.is-text {
     background-color: transparent;
     border-color: transparent;
-    color: #e8c692;
+    color: #f5e5ce;
     text-decoration: underline; }
     .button.is-text:hover, .button.is-text.is-hovered, .button.is-text:focus, .button.is-text.is-focused {
       background-color: whitesmoke;
@@ -2314,11 +2314,11 @@ a.box:active {
   .progress::-webkit-progress-bar {
     background-color: #dbdbdb; }
   .progress::-webkit-progress-value {
-    background-color: #e8c692; }
+    background-color: #f5e5ce; }
   .progress::-moz-progress-bar {
-    background-color: #e8c692; }
+    background-color: #f5e5ce; }
   .progress::-ms-fill {
-    background-color: #e8c692;
+    background-color: #f5e5ce;
     border: none; }
   .progress.is-white::-webkit-progress-value {
     background-color: white; }
@@ -2406,7 +2406,7 @@ a.box:active {
     animation-name: moveIndeterminate;
     animation-timing-function: linear;
     background-color: #dbdbdb;
-    background-image: linear-gradient(to right, #e8c692 30%, #dbdbdb 30%);
+    background-image: linear-gradient(to right, #f5e5ce 30%, #dbdbdb 30%);
     background-position: top left;
     background-repeat: no-repeat;
     background-size: 150% 150%; }
@@ -2598,7 +2598,7 @@ a.box:active {
   align-items: center;
   background-color: whitesmoke;
   border-radius: 4px;
-  color: #e8c692;
+  color: #f5e5ce;
   display: inline-flex;
   font-size: 0.75rem;
   height: 2em;
@@ -3646,7 +3646,7 @@ a.tag:hover {
 .card {
   background-color: transparent;
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
-  color: #e8c692;
+  color: #f5e5ce;
   max-width: 100%;
   position: relative; }
 
@@ -3841,7 +3841,7 @@ button.dropdown-item {
   display: block;
   padding: 0.5em 1em; }
   .list-item:not(a) {
-    color: #e8c692; }
+    color: #f5e5ce; }
   .list-item:first-child {
     border-top-left-radius: 4px;
     border-top-right-radius: 4px; }
@@ -3918,7 +3918,7 @@ a.list-item {
   line-height: 1.25; }
   .menu-list a {
     border-radius: 2px;
-    color: #e8c692;
+    color: #f5e5ce;
     display: block;
     padding: 0.5em 0.75em; }
     .menu-list a:hover {
@@ -4040,7 +4040,7 @@ a.list-item {
 
 .message-header {
   align-items: center;
-  background-color: #e8c692;
+  background-color: #f5e5ce;
   border-radius: 4px 4px 0 0;
   color: rgba(0, 0, 0, 0.7);
   display: flex;
@@ -4063,7 +4063,7 @@ a.list-item {
   border-radius: 4px;
   border-style: solid;
   border-width: 0 0 0 4px;
-  color: #e8c692;
+  color: #f5e5ce;
   padding: 1.25em 1.5em; }
   .message-body code,
   .message-body pre {
@@ -5101,7 +5101,7 @@ a.navbar-item,
       color: #363636; }
 
 .panel-list a {
-  color: #e8c692; }
+  color: #f5e5ce; }
   .panel-list a:hover {
     color: #512863; }
 
@@ -5160,7 +5160,7 @@ label.panel-block {
     border-bottom-color: #dbdbdb;
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    color: #e8c692;
+    color: #f5e5ce;
     display: flex;
     justify-content: center;
     margin-bottom: -1px;
@@ -6979,10 +6979,14 @@ figure.image.is-covering img {
     height: 45px;
     background-image: linear-gradient(to bottom, #a12618 0 15px, #cc971f 15px 30px, #2a7d9c 30px); } }
 
+strong {
+  color: inherit; }
+
 .hero {
   background-size: cover;
   position: relative;
-  z-index: 10; }
+  z-index: 10;
+  border-bottom: 5px solid #501e0a; }
   .hero.home-hero {
     background-image: url("../images/hero.jpg");
     background-attachment: fixed;
@@ -7078,45 +7082,40 @@ figure.image.is-covering img {
 
 .level.fancy-spacer {
   position: relative;
+  z-index: 11;
+  top: -30px;
+  height: 80px;
+  width: 100%;
+  margin: 0;
   background-image: url("../images/spacer_1.svg");
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
-  height: 120px;
-  margin: 100px 0 80px; }
-  .level.fancy-spacer:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: -100px;
-    width: 100%;
-    height: 12px;
-    border-top: 4px solid #DF3926;
-    background: #E5B852;
-    border-bottom: 4px solid #46A8CD; }
+  background-position: center; }
   .level.fancy-spacer.is-footer {
     background-image: url("../images/spacer_3.svg");
     filter: opacity(0.5);
-    height: 80px;
-    margin: 100px 0 40px; }
+    margin-top: 100px;
+    margin-bottom: 40px;
+    top: 0; }
     .level.fancy-spacer.is-footer:before {
-      top: -50px; }
+      content: '';
+      display: block;
+      position: absolute;
+      top: -40px;
+      width: 100%;
+      height: 12px;
+      border-top: 4px solid #DF3926;
+      background: #E5B852;
+      border-bottom: 4px solid #46A8CD; }
     @media screen and (max-width: 1024px) {
       .level.fancy-spacer.is-footer {
         height: 40px;
         margin: 80px 0 30px; }
         .level.fancy-spacer.is-footer:before {
           top: -30px; } }
-  @media screen and (max-width: 1024px) {
-    .level.fancy-spacer {
-      height: 80px;
-      margin: 60px 0 50px; }
-      .level.fancy-spacer:before {
-        top: -60px; } }
 
 .exhibits .expo-item {
-  background: #501e0a;
-  margin-bottom: 1rem; }
+  margin-bottom: 0rem; }
 
 .exhibits .card.exhibit {
   position: relative;
@@ -7172,8 +7171,7 @@ figure.image.is-covering img {
       margin-right: 0; }
   .exhibit-detail .content-text {
     font-size: 1.2rem;
-    letter-spacing: 1px;
-    border: 2px solid #5e160e; }
+    letter-spacing: 1px; }
   .exhibit-detail .content-gallery {
     margin-bottom: 1rem;
     display: flex;

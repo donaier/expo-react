@@ -1,0 +1,41 @@
+.level.fancy-spacer {
+  position: relative;
+  z-index: 11;
+  top: -30px;
+  height: 80px;
+  width: 100%;
+  margin: 0;
+  background-image: url("../images/spacer_1.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &.is-footer {
+    background-image: url("../images/spacer_3.svg");
+    filter: opacity(.5);
+    margin-top: 100px;
+    margin-bottom: 40px;
+    top: 0;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -40px;
+      width: 100%;
+      height: 12px;
+      border-top: 4px solid $red; 
+      background: $yellow;
+      border-bottom: 4px solid $blue;
+    }
+
+    @media screen and (max-width: 1024px) {
+      height: 40px;
+      margin: 80px 0 30px;
+
+      &:before {
+        top: -30px;
+      }
+    }
+  }
+}

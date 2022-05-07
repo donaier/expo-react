@@ -88,7 +88,6 @@ function ExpoItem() {
               </div>
             </div>
           </div>
-          <div className="level fancy-spacer"></div>
         </section>
         <section className="exhibit-detail content">
           <div className="container">
