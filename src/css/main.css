@@ -6988,9 +6988,11 @@ strong {
   z-index: 10;
   border-bottom: 5px solid #501e0a; }
   .hero.home-hero {
-    background-image: url("../images/hero.jpg");
+    height: 70vh;
+    background-image: url("../images/hero2.jpg");
     background-attachment: fixed;
-    background-position: center 120%; }
+    background-position: left center;
+    background-size: cover; }
   .hero.exhibit-header {
     background-position: center; }
   .hero p.title {
@@ -7067,11 +7069,6 @@ strong {
     position: relative;
     top: 5px; }
   @media screen and (max-width: 1024px) {
-    .hero.home-hero {
-      height: 500px;
-      min-height: 75vh; }
-    .hero.home-hero {
-      background-position: top; }
     .hero p.title {
       font-size: 2rem;
       bottom: 35%; }
