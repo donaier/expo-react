@@ -12,7 +12,7 @@ function ExpoItem() {
   const { expoItemSlug } = useParams();
 
   React.useEffect(() => {
-    fetch('https://cockpit.donaier.ch/api/collections/get/trip?token=account-6c57e73dbedad1d552b8a424bd4e72', {
+    fetch(`https://cockpit.donaier.ch/api/collections/get/trip?token=${process.env.REACT_APP_API_KEY}`, {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
