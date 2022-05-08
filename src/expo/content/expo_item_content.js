@@ -13,7 +13,9 @@ function ExpoItemContent(props) {
     case 'wysiwyg':
       return (
         <div className={'columns is-centered'}>
-          <div className={'column is-half content-text box'} dangerouslySetInnerHTML={{__html: component.value}} />
+          <div className={'column is-half'}>
+            <div className={'content-text box'} dangerouslySetInnerHTML={{__html: component.value}} />
+          </div>
         </div>
       );
     case 'gallery':

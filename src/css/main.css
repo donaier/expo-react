@@ -7155,15 +7155,9 @@ strong {
 .exhibit-detail {
   position: relative;
   margin-top: 30px; }
-  .exhibit-detail .level.infos {
-    position: absolute;
-    top: -180px;
-    width: 100%;
-    z-index: 22;
-    margin: 30px 0 20px; }
-    .exhibit-detail .level.infos i {
-      color: #46A8CD;
-      margin-right: 1.5rem; }
+  .exhibit-detail .level.infos i {
+    color: #46A8CD;
+    margin-right: 1.5rem; }
   .exhibit-detail .content-image {
     margin-bottom: 1rem; }
     .exhibit-detail .content-image figure {
@@ -7180,18 +7174,16 @@ strong {
       display: inline;
       max-width: 49%; }
   @media screen and (max-width: 1024px) {
-    .exhibit-detail .level.infos {
-      top: -45px;
-      z-index: 3;
-      font-size: 1rem; }
-      .exhibit-detail .level.infos .level-item {
-        margin-bottom: 2px;
-        justify-content: start;
-        margin-left: 20px; }
-    .exhibit-detail .content-image {
-      margin-bottom: 1rem; }
-    .exhibit-detail .content-text {
-      font-size: 1rem;
-      letter-spacing: 1px;
-      border-left: none;
-      border-right: none; } }
+    .exhibit-detail {
+      margin-top: 10px; }
+      .exhibit-detail .level.infos {
+        font-size: 1rem; }
+        .exhibit-detail .level.infos .level-item {
+          margin-bottom: 2px;
+          justify-content: start;
+          margin-left: 20px; }
+      .exhibit-detail .content-image {
+        margin-bottom: 1rem; }
+      .exhibit-detail .content-text {
+        font-size: 1rem;
+        letter-spacing: 1px; } }
